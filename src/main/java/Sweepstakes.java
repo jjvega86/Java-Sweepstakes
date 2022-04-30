@@ -23,9 +23,8 @@ public class Sweepstakes {
 	}
 
 	public Contestant PickWinner() {
-		Contestant winner = null;
-		// TODO: write logic for picking a random winner from the HashMap
-		return winner;
+		int randomKey = Helpers.GenerateRandomInteger(contestants.size());
+		return contestants.get(randomKey);
 
 	}
 
