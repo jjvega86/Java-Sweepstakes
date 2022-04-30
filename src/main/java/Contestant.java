@@ -1,9 +1,9 @@
 
 public class Contestant {
-	public int id;
-	public String firstName;
-	public String lastName;
-	public String emailAddress;
+	int id;
+	String firstName;
+	String lastName;
+	String emailAddress;
 
 	public int getId() {
 		return id;
