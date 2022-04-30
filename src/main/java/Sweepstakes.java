@@ -1,4 +1,7 @@
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.HashMap;
+import java.util.List;
 
 public class Sweepstakes {
 	public String name;
@@ -12,14 +15,19 @@ public class Sweepstakes {
 		this.name = name;
 	}
 
-	public Sweepstakes(String name) {
+	public Sweepstakes(String name) throws IOException, URISyntaxException {
 		super();
 		this.name = name;
+		this.contestants = new HashMap<Integer, Contestant>();
+		this.RegisterContestants();
 	}
 
-	public void RegisterContestants() {
-		// TODO: Use the CSVParser Parse() method to parse CSV asset and generate the
-		// HashMap of Contestant objects
+	public void RegisterContestants() throws IOException, URISyntaxException {
+		CSVParser parser = new CSVParser();
+		List<Contestant> contestants = parser.Parse();
+		for (Contestant contestant : contestants) {
+			this.contestants.put(contestant.id, contestant);
+		}
 	}
 
 	public Contestant PickWinner() {
