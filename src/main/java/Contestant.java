@@ -50,12 +50,12 @@ public class Contestant implements EventListener {
 		this.emailAddress = emailAddress;
 	}
 
-	public void Update(String winner) {
+	public void update(String winner) {
 		if (winner == this.firstName) {
 			this.wonCount++;
-			Helpers.Print("You won, congratulations!");
+			Helpers.print("You won, congratulations!");
 		} else {
-			Helpers.Print(winner + " is the winner!");
+			Helpers.print(winner + " is the winner!");
 		}
 
 	}

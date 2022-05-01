@@ -11,20 +11,20 @@ public class EventManager {
 		}
 	}
 
-	public void Subscribe(String eventType, EventListener listener) {
+	public void subscribe(String eventType, EventListener listener) {
 		List<EventListener> users = listeners.get(eventType);
 		users.add(listener);
 	}
 
-	public void Unsubscribe(String eventType, EventListener listener) {
+	public void unsubscribe(String eventType, EventListener listener) {
 		List<EventListener> users = listeners.get(eventType);
 		users.remove(listener);
 	}
 
-	public void Notify(String eventType, String winner) {
+	public void notify(String eventType, String winner) {
 		List<EventListener> users = listeners.get(eventType);
 		for (EventListener listener : users) {
-			listener.Update(winner);
+			listener.update(winner);
 		}
 	}
 

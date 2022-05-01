@@ -9,14 +9,14 @@ public class MarketingFirm {
 		this.manager = manager;
 	}
 
-	public void AddSweepstakes(String name) throws IOException, URISyntaxException {
+	public void addSweepstakes(String name) throws IOException, URISyntaxException {
 		Sweepstakes newSweepstakes = new Sweepstakes(name);
-		manager.InsertSweepstakes(newSweepstakes);
+		manager.insertSweepstakes(newSweepstakes);
 	}
 
-	public void RunSweepstakes() {
-		Sweepstakes runningSweepstakes = manager.GetSweepstakes();
-		runningSweepstakes.PickWinner();
+	public void runSweepstakes() {
+		Sweepstakes runningSweepstakes = manager.getSweepstakes();
+		runningSweepstakes.pickWinner();
 	}
 
 }

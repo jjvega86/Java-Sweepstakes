@@ -8,12 +8,12 @@ public class SweepstakesStackManager implements SweepstakesManager {
 		this.stack = new Stack<Sweepstakes>();
 	}
 
-	public void InsertSweepstakes(Sweepstakes sweepstakes) {
+	public void insertSweepstakes(Sweepstakes sweepstakes) {
 		stack.push(sweepstakes);
 
 	}
 
-	public Sweepstakes GetSweepstakes() {
+	public Sweepstakes getSweepstakes() {
 		return stack.pop();
 	}
 

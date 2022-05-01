@@ -28,22 +28,22 @@ public class Sweepstakes {
 		this.name = name;
 		this.contestants = new HashMap<Integer, Contestant>();
 		this.events = new EventManager("winnerChosen");
-		this.RegisterContestants();
+		this.registerContestants();
 	}
 
-	public void RegisterContestants() throws IOException, URISyntaxException {
+	public void registerContestants() throws IOException, URISyntaxException {
 		CSVParser parser = new CSVParser();
-		List<Contestant> contestants = parser.Parse();
+		List<Contestant> contestants = parser.parse();
 		for (Contestant contestant : contestants) {
 			this.contestants.put(contestant.id, contestant);
-			this.events.Subscribe("winnerChosen", contestant);
+			this.events.subscribe("winnerChosen", contestant);
 		}
 	}
 
-	public void PickWinner() {
-		int randomKey = Helpers.GenerateRandomInteger(contestants.size());
+	public void pickWinner() {
+		int randomKey = Helpers.generateRandomInteger(contestants.size());
 		Contestant winner = contestants.get(randomKey);
-		this.events.Notify("winnerChosen", winner.firstName);
+		this.events.notify("winnerChosen", winner.firstName);
 
 	}
 

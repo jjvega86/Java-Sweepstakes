@@ -1,5 +1,5 @@
 
-public class SweepstakesManagerFactor {
+public class SweepstakesManagerFactory {
 
 	public static SweepstakesManager GetSweepstakesManager(String type) {
 

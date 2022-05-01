@@ -9,12 +9,12 @@ public class SweepstakesQueueManager implements SweepstakesManager {
 		this.queue = new LinkedList<Sweepstakes>();
 	}
 
-	public void InsertSweepstakes(Sweepstakes sweepstakes) {
+	public void insertSweepstakes(Sweepstakes sweepstakes) {
 		queue.add(sweepstakes);
 
 	}
 
-	public Sweepstakes GetSweepstakes() {
+	public Sweepstakes getSweepstakes() {
 		return queue.remove();
 	}
 

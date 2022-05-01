@@ -1,7 +1,7 @@
 
 public interface SweepstakesManager {
-	void InsertSweepstakes(Sweepstakes sweepstakes);
+	void insertSweepstakes(Sweepstakes sweepstakes);
 
-	Sweepstakes GetSweepstakes();
+	Sweepstakes getSweepstakes();
 
 }

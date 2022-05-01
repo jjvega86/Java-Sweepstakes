@@ -8,7 +8,7 @@ import com.opencsv.CSVReader;
 
 public class CSVParser {
 
-	public List<Contestant> Parse() throws IOException, URISyntaxException {
+	public List<Contestant> parse() throws IOException, URISyntaxException {
 		List<Contestant> parsedContestants = new ArrayList<Contestant>();
 		CSVReader csvReader = new CSVReader(new FileReader("/Users/jjvega/Documents/devCodeCamp/Sweepstakes/src/main/java/sweepstakes_data.csv"));
 		List<String[]> allRows = csvReader.readAll();

@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Helpers {
 	
-	public static String TakeInput(String input){
+	public static String takeInput(String input){
 		System.out.println(input);
 		Scanner sc = new Scanner(System.in);
 		String response = sc.nextLine();
@@ -11,17 +11,17 @@ public class Helpers {
 		
 	}
 	
-	public static void Print(String input) {
+	public static void print(String input) {
 		System.out.println(input);
 	}
 	
-	public static int GenerateRandomInteger(int max) {
+	public static int generateRandomInteger(int max) {
 		Random rand = new Random();
 		int randomNumber = rand.nextInt(max);
 		return randomNumber;
 	}
 	
-	public static int ConvertStringToInt(String s) {
+	public static int convertStringToInt(String s) {
 		int convertedValue;
 		try {
 			convertedValue = Integer.parseInt(s);
