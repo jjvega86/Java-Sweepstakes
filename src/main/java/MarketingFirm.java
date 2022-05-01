@@ -16,9 +16,7 @@ public class MarketingFirm {
 
 	public void RunSweepstakes() {
 		Sweepstakes runningSweepstakes = manager.GetSweepstakes();
-		Contestant winner = runningSweepstakes.PickWinner();
-		Helpers.Print("The winner is " + winner.firstName + "!");
-		//TODO: Use observer pattern to send a message to all contestants based on winner
+		runningSweepstakes.PickWinner();
 	}
 
 }

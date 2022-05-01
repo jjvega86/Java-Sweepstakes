@@ -3,6 +3,13 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 
+/*
+ * EventManager (has listeners, a hash map of event types and EventListeners)
+ * Publisher (has List of EventManager events and calls update when its state changes)
+ * EventListener (interface - describes update method that subscribers implement)
+ * Subscriber (implements EventListenter with update method)
+ * */
+
 public class Sweepstakes {
 	public String name;
 	public HashMap<Integer, Contestant> contestants;
@@ -30,9 +37,11 @@ public class Sweepstakes {
 		}
 	}
 
-	public Contestant PickWinner() {
+	public void PickWinner() {
 		int randomKey = Helpers.GenerateRandomInteger(contestants.size());
-		return contestants.get(randomKey);
+		Contestant winner = contestants.get(randomKey);
+		Helpers.Print("The winner is " + winner.firstName + "!");
+		//TODO: Use observer pattern to send a message to all contestants based on winner
 
 	}
 

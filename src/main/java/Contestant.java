@@ -1,9 +1,10 @@
 
-public class Contestant {
+public class Contestant implements EventListener {
 	int id;
 	String firstName;
 	String lastName;
 	String emailAddress;
+	int wonCount;
 
 	public int getId() {
 		return id;
@@ -47,6 +48,16 @@ public class Contestant {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailAddress = emailAddress;
+	}
+
+	public void Update(String winner) {
+		if (winner == this.firstName) {
+			this.wonCount++;
+			Helpers.Print("You won, congratulations!");
+		} else {
+			Helpers.Print(winner + "is the winner!");
+		}
+
 	}
 
 }
