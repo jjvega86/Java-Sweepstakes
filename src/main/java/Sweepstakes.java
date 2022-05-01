@@ -13,6 +13,7 @@ import java.util.List;
 public class Sweepstakes {
 	public String name;
 	public HashMap<Integer, Contestant> contestants;
+	public EventManager events;
 
 	public String getName() {
 		return name;
@@ -26,6 +27,7 @@ public class Sweepstakes {
 		super();
 		this.name = name;
 		this.contestants = new HashMap<Integer, Contestant>();
+		this.events = new EventManager("winnerChosen");
 		this.RegisterContestants();
 	}
 
@@ -34,14 +36,14 @@ public class Sweepstakes {
 		List<Contestant> contestants = parser.Parse();
 		for (Contestant contestant : contestants) {
 			this.contestants.put(contestant.id, contestant);
+			this.events.Subscribe("winnerChosen", contestant);
 		}
 	}
 
 	public void PickWinner() {
 		int randomKey = Helpers.GenerateRandomInteger(contestants.size());
 		Contestant winner = contestants.get(randomKey);
-		Helpers.Print("The winner is " + winner.firstName + "!");
-		//TODO: Use observer pattern to send a message to all contestants based on winner
+		this.events.Notify("winnerChosen", winner.firstName);
 
 	}
 

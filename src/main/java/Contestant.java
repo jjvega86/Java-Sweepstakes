@@ -55,7 +55,7 @@ public class Contestant implements EventListener {
 			this.wonCount++;
 			Helpers.Print("You won, congratulations!");
 		} else {
-			Helpers.Print(winner + "is the winner!");
+			Helpers.Print(winner + " is the winner!");
 		}
 
 	}
