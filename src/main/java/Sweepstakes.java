@@ -43,7 +43,7 @@ public class Sweepstakes {
 	public void pickWinner() {
 		int randomKey = Helpers.generateRandomInteger(contestants.size());
 		Contestant winner = contestants.get(randomKey);
-		this.events.notify("winnerChosen", winner.firstName);
+		this.events.notify("winnerChosen", winner);
 
 	}
 

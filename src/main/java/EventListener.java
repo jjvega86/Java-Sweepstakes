@@ -1,4 +1,4 @@
 
 public interface EventListener {
-	public void update(String winner);
+	public void update(Contestant winningContestant);
 }

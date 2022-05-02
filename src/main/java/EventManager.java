@@ -21,10 +21,10 @@ public class EventManager {
 		users.remove(listener);
 	}
 
-	public void notify(String eventType, String winner) {
+	public void notify(String eventType, Contestant winningContestant) {
 		List<EventListener> users = listeners.get(eventType);
 		for (EventListener listener : users) {
-			listener.update(winner);
+			listener.update(winningContestant);
 		}
 	}
 
